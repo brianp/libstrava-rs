@@ -47,7 +47,7 @@ impl<C: hyper::client::Connect>SegmentsApi for SegmentsApiClient<C> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
-        let mut auth_query = HashMap::<String, String>::new();
+        let auth_query = HashMap::<String, String>::new();
         if let Some(ref token) = configuration.oauth_access_token {
             let auth = hyper::header::Authorization(
                 hyper::header::Bearer {
@@ -75,7 +75,7 @@ impl<C: hyper::client::Connect>SegmentsApi for SegmentsApiClient<C> {
         // if let Err(e) = uri {
         //     return Box::new(futures::future::err(e));
         // }
-        let mut uri: hyper::Uri = uri_str.parse().unwrap();
+        let uri: hyper::Uri = uri_str.parse().unwrap();
 
         let mut req = hyper::Request::new(method, uri);
 
@@ -117,7 +117,7 @@ impl<C: hyper::client::Connect>SegmentsApi for SegmentsApiClient<C> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
-        let mut auth_query = HashMap::<String, String>::new();
+        let auth_query = HashMap::<String, String>::new();
         if let Some(ref token) = configuration.oauth_access_token {
             let auth = hyper::header::Authorization(
                 hyper::header::Bearer {
@@ -143,7 +143,7 @@ impl<C: hyper::client::Connect>SegmentsApi for SegmentsApiClient<C> {
         // if let Err(e) = uri {
         //     return Box::new(futures::future::err(e));
         // }
-        let mut uri: hyper::Uri = uri_str.parse().unwrap();
+        let uri: hyper::Uri = uri_str.parse().unwrap();
 
         let mut req = hyper::Request::new(method, uri);
 
@@ -185,7 +185,7 @@ impl<C: hyper::client::Connect>SegmentsApi for SegmentsApiClient<C> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
-        let mut auth_query = HashMap::<String, String>::new();
+        let auth_query = HashMap::<String, String>::new();
         if let Some(ref token) = configuration.oauth_access_token {
             let auth = hyper::header::Authorization(
                 hyper::header::Bearer {
@@ -209,7 +209,7 @@ impl<C: hyper::client::Connect>SegmentsApi for SegmentsApiClient<C> {
         // if let Err(e) = uri {
         //     return Box::new(futures::future::err(e));
         // }
-        let mut uri: hyper::Uri = uri_str.parse().unwrap();
+        let uri: hyper::Uri = uri_str.parse().unwrap();
 
         let mut req = hyper::Request::new(method, uri);
 
@@ -251,7 +251,7 @@ impl<C: hyper::client::Connect>SegmentsApi for SegmentsApiClient<C> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
-        let mut auth_query = HashMap::<String, String>::new();
+        let auth_query = HashMap::<String, String>::new();
         if let Some(ref token) = configuration.oauth_access_token {
             let auth = hyper::header::Authorization(
                 hyper::header::Bearer {
@@ -275,7 +275,7 @@ impl<C: hyper::client::Connect>SegmentsApi for SegmentsApiClient<C> {
         // if let Err(e) = uri {
         //     return Box::new(futures::future::err(e));
         // }
-        let mut uri: hyper::Uri = uri_str.parse().unwrap();
+        let uri: hyper::Uri = uri_str.parse().unwrap();
 
         let mut req = hyper::Request::new(method, uri);
 

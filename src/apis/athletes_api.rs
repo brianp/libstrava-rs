@@ -47,7 +47,7 @@ impl<C: hyper::client::Connect>AthletesApi for AthletesApiClient<C> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
-        let mut auth_query = HashMap::<String, String>::new();
+        let auth_query = HashMap::<String, String>::new();
         if let Some(ref token) = configuration.oauth_access_token {
             let auth = hyper::header::Authorization(
                 hyper::header::Bearer {
@@ -71,7 +71,7 @@ impl<C: hyper::client::Connect>AthletesApi for AthletesApiClient<C> {
         // if let Err(e) = uri {
         //     return Box::new(futures::future::err(e));
         // }
-        let mut uri: hyper::Uri = uri_str.parse().unwrap();
+        let uri: hyper::Uri = uri_str.parse().unwrap();
 
         let mut req = hyper::Request::new(method, uri);
 
@@ -113,7 +113,7 @@ impl<C: hyper::client::Connect>AthletesApi for AthletesApiClient<C> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
-        let mut auth_query = HashMap::<String, String>::new();
+        let auth_query = HashMap::<String, String>::new();
         if let Some(ref token) = configuration.oauth_access_token {
             let auth = hyper::header::Authorization(
                 hyper::header::Bearer {
@@ -137,7 +137,7 @@ impl<C: hyper::client::Connect>AthletesApi for AthletesApiClient<C> {
         // if let Err(e) = uri {
         //     return Box::new(futures::future::err(e));
         // }
-        let mut uri: hyper::Uri = uri_str.parse().unwrap();
+        let uri: hyper::Uri = uri_str.parse().unwrap();
 
         let mut req = hyper::Request::new(method, uri);
 
@@ -179,7 +179,7 @@ impl<C: hyper::client::Connect>AthletesApi for AthletesApiClient<C> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
-        let mut auth_query = HashMap::<String, String>::new();
+        let auth_query = HashMap::<String, String>::new();
         if let Some(ref token) = configuration.oauth_access_token {
             let auth = hyper::header::Authorization(
                 hyper::header::Bearer {
@@ -203,7 +203,7 @@ impl<C: hyper::client::Connect>AthletesApi for AthletesApiClient<C> {
         // if let Err(e) = uri {
         //     return Box::new(futures::future::err(e));
         // }
-        let mut uri: hyper::Uri = uri_str.parse().unwrap();
+        let uri: hyper::Uri = uri_str.parse().unwrap();
 
         let mut req = hyper::Request::new(method, uri);
 
@@ -245,7 +245,7 @@ impl<C: hyper::client::Connect>AthletesApi for AthletesApiClient<C> {
         let configuration: &configuration::Configuration<C> = self.configuration.borrow();
 
         let mut auth_headers = HashMap::<String, String>::new();
-        let mut auth_query = HashMap::<String, String>::new();
+        let auth_query = HashMap::<String, String>::new();
         if let Some(ref token) = configuration.oauth_access_token {
             let auth = hyper::header::Authorization(
                 hyper::header::Bearer {
@@ -263,13 +263,13 @@ impl<C: hyper::client::Connect>AthletesApi for AthletesApiClient<C> {
             }
             query.finish()
         };
-        let uri_str = format!("{}/athlete?{}", configuration.base_path, query_string, weight=weight);
+        let uri_str = format!("{}/athlete?{}", configuration.base_path, query_string);
 
         // TODO(farcaller): handle error
         // if let Err(e) = uri {
         //     return Box::new(futures::future::err(e));
         // }
-        let mut uri: hyper::Uri = uri_str.parse().unwrap();
+        let uri: hyper::Uri = uri_str.parse().unwrap();
 
         let mut req = hyper::Request::new(method, uri);
 
