@@ -60,7 +60,8 @@ impl<C: hyper::client::Connect>SegmentsApi for SegmentsApiClient<C> {
 
         let query_string = {
             let mut query = ::url::form_urlencoded::Serializer::new(String::new());
-            query.append_pair("bounds", &bounds.join(",").to_string());
+            let bound_strings: &Vec<String> = &bounds.into_iter().map(|x| x.to_string()).rev().collect();
+            query.append_pair("bounds", &bound_strings.join(","));
             query.append_pair("activity_type", &activity_type.to_string());
             query.append_pair("min_cat", &min_cat.to_string());
             query.append_pair("max_cat", &max_cat.to_string());
